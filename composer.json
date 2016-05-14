@@ -1,0 +1,26 @@
+{
+    
+    "name": "wyfi/hskdata",
+    "description": "RESTful API for HSK Chinese characters",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "wyatt",
+            "email": "hskdata@animusloci.com"
+        }
+    ],
+    "require": {
+        "slim/slim": "^3.0",
+        "monolog/monolog": "^1.19",
+        "vrana/notorm": "dev-master",
+        "slim/middleware": "^1.0",
+        "flynsarmy/slim-monolog": "^1.0",
+        "slim/extras": "^2.0"
+    },
+    "archive": {
+        "exclude": ["vendor", ".DS_Store", "*.log"]
+    },
+    "autoload": {
+        "psr-4": {"API\\": "lib/"}
+    }
+}

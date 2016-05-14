@@ -1,0 +1,7 @@
+vendor/*
+config/default.php
+config/development.php
+config/production.php
+robots.txt
+.ftpquota
+logs/

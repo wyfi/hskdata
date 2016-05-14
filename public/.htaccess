@@ -1,0 +1,35 @@
+# Prevent Apache from serving .htaccess files:
+<FilesMatch "^\.htaccess">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+AddDefaultCharset UTF-8
+
+Options All -Indexes
+DirectoryIndex index.php index.shtml index.html
+
+<IfModule php5_module>
+    # For Development only!
+    php_flag display_errors On
+</IfModule>
+
+# Enable gzip compression
+<ifModule filter_module>
+    AddOutputFilterByType DEFLATE application/json
+</ifModule>
+
+<IfModule rewrite_module>
+    RewriteEngine On
+
+    ## Throw a 403 (forbidden) status for non secure requests
+    RewriteCond %{HTTPS} off
+    RewriteRule ^.*$ - [R=403]
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+   # RewriteRule ^(.*)$ index.php
+    RewriteRule ^ index.php [QSA,L]
+    #RewriteRule ^(.*)$ index.php?request=$1 [QSA,NC,L]
+</IfModule>
+
+SetEnv SLIM_MODE development
