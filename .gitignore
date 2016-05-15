@@ -5,3 +5,4 @@ config/production.php
 robots.txt
 .ftpquota
 logs/
+php.ini

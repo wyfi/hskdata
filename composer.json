@@ -21,6 +21,6 @@
         "exclude": ["vendor", ".DS_Store", "*.log"]
     },
     "autoload": {
-        "psr-4": {"API\\": "lib/"}
+        "psr-4": {"API\\": "src/api/"}
     }
 }

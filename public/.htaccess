@@ -4,6 +4,12 @@
     Deny from all
 </FilesMatch>
 
+# Prevent Apache from serving .ini files:
+<FilesMatch "^\.ini">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
 AddDefaultCharset UTF-8
 
 Options All -Indexes
@@ -27,7 +33,7 @@ DirectoryIndex index.php index.shtml index.html
     RewriteRule ^.*$ - [R=403]
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
-   # RewriteRule ^(.*)$ index.php
+    #RewriteRule ^(.*)$ index.php
     RewriteRule ^ index.php [QSA,L]
     #RewriteRule ^(.*)$ index.php?request=$1 [QSA,NC,L]
 </IfModule>

@@ -1,14 +1,16 @@
 <?php
 
+// Prepare app
+require_once __DIR__ . '/../src/bootstrap.php';
 
-require_once dirname(__FILE__) . '/../bootstrap.php';
+// Register dependencies
+require_once __DIR__ . '/../src/dependencies.php';
 
-// Begin routes
-$oApp->get("/", function(\Slim\Http\Request $req, \Slim\Http\Response $res) {
-    $oDb = $this->db;
-    $iCount = count($oDb->t_main);
-    $this->logger->addInfo("...and it has $iCount rows.");
-});
+// Register middleware
+//require_once __DIR__ . '/../src/middleware.php';
+
+// Register routes
+require_once __DIR__ . '/../src/routes.php';
 
 // Run app
 $oApp->run();
