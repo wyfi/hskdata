@@ -15,6 +15,7 @@ $oContainer['logger'] = function($oC) {
 };
 $oLog = $oContainer['logger'];
 
+
 // Register error handler and provide variable.
 $oContainer['errorHandler'] = function ($oC) {
     $oError = new API\Error($oC['logger']);
@@ -24,8 +25,7 @@ $oError = $oContainer['errorHandler'];
 
 
 // Register database connection and provide variable.
-//$oContainer['db'] = function ($oC) {
- //   try {
+//   try {
         $avDb = $oContainer['settings']['db'];
         $sDSN = sprintf('%s:host=%s;dbname=%s', $avDb['driver'], $avDb['dbhost'], $avDb['dbname']);
         
@@ -44,7 +44,7 @@ $oError = $oContainer['errorHandler'];
             $oContainer['logger']->addInfo("IdiORM: $log_string ($query_time)");
         });
         $oContainer['logger']->addInfo("Database connection established via IdiORM.");
- //       return \ORM::getInstance();
+//       return \ORM::getInstance();
 /*    
     } catch (\PDOException $e) {
         throw new Exception('Database connection via IdiORM could not be established.');

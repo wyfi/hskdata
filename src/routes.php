@@ -13,13 +13,22 @@ $oApp->group('/api', function () use ($oApp, $oLog) {
         // GET routes - use filter for char set and sort
         
         // Chars group
-        $oApp->group('/chars', function () use ($oApp, $oLog) {
+        //$oApp->group('/chars', function () use ($oApp, $oLog) {
         // GET routes - use filter for char set and sort
-        
+             
             //returns list of all chars
-            $oApp->get('/',
+            $oApp->get('/chars',
                 function ($request, $response) use ($oApp, $oLog) {
-                $oCharacters = new Characters($this->db);
+                    
+                    //$asChars = array();
+                    //echo \ORM::for_table('t_main')->where('unicode', '7816')->count();
+                    $asChars = \ORM::for_table('t_main')->where('unicode', '7816')->find_array();
+                    
+                    $ww = json_encode($asChars);
+                    $response->withStatus(200)
+                        ->withHeader('Content-type', 'application/json;charset=utf-8') 
+                        ->write($ww);
+                    
             });
             /*
             $app->get('/{id}',
@@ -67,7 +76,7 @@ $oApp->group('/api', function () use ($oApp, $oLog) {
                 //returns a level or levels - uses regex - or :
             });
             */
-        });
+        //});
     });
 });
 

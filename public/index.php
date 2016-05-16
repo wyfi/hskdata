@@ -13,6 +13,6 @@ require_once __DIR__ . '/../src/middleware.php';
 require_once __DIR__ . '/../src/routes.php';
 
 // Run app
-$oApp->run();
+$response = $oApp->run();
 
 ?>

@@ -12,7 +12,7 @@ class JSON
     
     public function __invoke($oRequest, $oResponse, $oNext)
     {
-         echo 'in JSON';
+        //echo 'in JSON';
         // check that the INCOMING REQUEST matches our URI patter (eg. /api/v1/)
         $res = preg_match('|^' . $this->_root . '.*|', $oRequest->getUri()->getPath());
         
@@ -23,7 +23,7 @@ class JSON
 
                 // force the response headers to Json.
                 try {
-                    $oNewResponse = $oResponse->withJson('howdy!', 200);
+                    $oNewResponse = $oResponse->withJson();
                     $response = $oNext($oRequest, $oResponse);
                     return $oNewResponse;
                 }

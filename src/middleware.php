@@ -11,12 +11,11 @@
 // Manage Rate Limit
 //$app->add(new API\Middleware\RateLimit('/api/v1'));
 
-// JSON Middleware
-$oApp->add(new API\Middleware\JSON('/api/v1'));
+// JSON Middleware - not needed unless incoming data
+//$oApp->add(new API\Middleware\JSON('/api/v1'));
 
 // Auth Middleware (outer)
 $oApp->add(new API\Middleware\TokenOverBasicAuth($oApp));
 
-//  $oDb, array('root' => '/api/v1')));
 
 ?>

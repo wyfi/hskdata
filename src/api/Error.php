@@ -22,7 +22,8 @@ final class Error extends \Slim\Handlers\Error
         $line = $exception->getLine();
         $message = $exception->getMessage();
         $file = $exception->getFile();
-        $this->logger->critical("$file ($line): $message ($code)");
+        $trace = $exception->getTraceAsString();
+        $this->logger->critical("$file ($line): $message ($code)\n\n $trace");
 
         return parent::__invoke($request, $response, $exception);
     }
