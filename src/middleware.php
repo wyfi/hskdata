@@ -1,5 +1,7 @@
 <?php
 
+//$asRoot = $avSettings['app']['roots'];
+
 // Cache Middleware (inner)
 //$app->add(new API\Middleware\Cache('/api/v1'));
 
@@ -10,9 +12,11 @@
 //$app->add(new API\Middleware\RateLimit('/api/v1'));
 
 // JSON Middleware
-//$app->add(new API\Middleware\JSON('/api/v1'));
+$oApp->add(new API\Middleware\JSON('/api/v1'));
 
 // Auth Middleware (outer)
-//$app->add(new API\Middleware\TokenOverBasicAuth(array('root' => '/api/v1')));
+$oApp->add(new API\Middleware\TokenOverBasicAuth($oApp));
+
+//  $oDb, array('root' => '/api/v1')));
 
 ?>

@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "1b1f0da823f0ad666fb32918ddd5fc82",
-    "content-hash": "fff1e6ab672872bb4bdfa0ddefd52e95",
+    "hash": "d8c3cad7b406cd8b1f6a75217a48cf3b",
+    "content-hash": "87130d0e2394774067654784d72f69c9",
     "packages": [
         {
             "name": "container-interop/container-interop",
@@ -79,6 +79,64 @@
                 "middleware"
             ],
             "time": "2015-07-15 22:14:44"
+        },
+        {
+            "name": "j4mie/idiorm",
+            "version": "v1.5.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/j4mie/idiorm.git",
+                "reference": "b0922d8719a94e3a0e0e4a0ca3876f4f91475dcf"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/j4mie/idiorm/zipball/b0922d8719a94e3a0e0e4a0ca3876f4f91475dcf",
+                "reference": "b0922d8719a94e3a0e0e4a0ca3876f4f91475dcf",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "idiorm.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-2-Clause",
+                "BSD-3-Clause",
+                "BSD-4-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Simon Holywell",
+                    "email": "treffynnon@php.net",
+                    "homepage": "http://simonholywell.com",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "Jamie Matthews",
+                    "email": "jamie.matthews@gmail.com",
+                    "homepage": "http://j4mie.org",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Durham Hale",
+                    "email": "me@durhamhale.com",
+                    "homepage": "http://durhamhale.com",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "A lightweight nearly-zero-configuration object-relational mapper and fluent query builder for PHP5",
+            "homepage": "http://j4mie.github.com/idiormandparis",
+            "keywords": [
+                "idiorm",
+                "orm",
+                "query builder"
+            ],
+            "time": "2014-06-23 13:08:57"
         },
         {
             "name": "monolog/monolog",
@@ -497,53 +555,12 @@
                 "router"
             ],
             "time": "2016-05-09 06:15:02"
-        },
-        {
-            "name": "vrana/notorm",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/vrana/notorm.git",
-                "reference": "e49d5d2f1bfe440dc82b61f46172635dfcb6f6dd"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/vrana/notorm/zipball/e49d5d2f1bfe440dc82b61f46172635dfcb6f6dd",
-                "reference": "e49d5d2f1bfe440dc82b61f46172635dfcb6f6dd",
-                "shasum": ""
-            },
-            "type": "library",
-            "autoload": {
-                "files": [
-                    "NotORM.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "Apache-2.0",
-                "GPL-2.0+"
-            ],
-            "authors": [
-                {
-                    "name": "Jakub Vrána",
-                    "homepage": "http://www.vrana.cz/"
-                }
-            ],
-            "description": "NotORM is a PHP library for simple working with data in the database.",
-            "homepage": "http://www.notorm.com/",
-            "keywords": [
-                "database",
-                "dbal"
-            ],
-            "time": "2014-10-30 16:55:08"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "vrana/notorm": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],

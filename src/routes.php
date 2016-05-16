@@ -3,76 +3,77 @@
 use \Slim\Http\Request;
 use \Slim\Http\Response;
 
- 
-/*
-// API route group
-$app->group('/api', function () use ($app, $log) {
 
-    // Version group
-    $app->group('/v1', function () use ($app, $log) {
+// API route group (/api)
+// the group identifiers must match the roots settings!!!
+$oApp->group('/api', function () use ($oApp, $oLog) {
+
+    // Version group (/v1)
+    $oApp->group('/v1', function () use ($oApp, $oLog) {
         // GET routes - use filter for char set and sort
         
         // Chars group
-        $app->group('/chars', function () use ($app, $log) {
+        $oApp->group('/chars', function () use ($oApp, $oLog) {
         // GET routes - use filter for char set and sort
         
-        $app->get('/',
-            function ($request, $response) use ($app, $log) {
             //returns list of all chars
-        });
-
-        $app->get('/{id}',
-            function ($request, $response, $args) use ($app, $log) {
-            //returns info about a specific char
-        });
-        
-        $app->get('/{id}/sound',
-            function ($request, $response, $args) use ($app, $log) {
-            //returns a level or levels - uses regex - or :
+            $oApp->get('/',
+                function ($request, $response) use ($oApp, $oLog) {
+                $oCharacters = new Characters($this->db);
+            });
+            /*
+            $app->get('/{id}',
+                function ($request, $response, $args) use ($app, $log) {
+                //returns info about a specific char
+            });
             
-        });
-        
-        $app->get('/{id}/tone',
-            function ($request, $response, $args) use ($app, $log) {
-            //returns a level or levels - uses regex - or :
+            $app->get('/{id}/sound',
+                function ($request, $response, $args) use ($app, $log) {
+                //returns a level or levels - uses regex - or :
+                
+            });
             
-        });
-        
-        $app->get('/{id}/radicals',
-            function ($request, $response, $args) use ($app, $log) {
-            //returns a level or levels - uses regex - or :
+            $app->get('/{id}/tone',
+                function ($request, $response, $args) use ($app, $log) {
+                //returns a level or levels - uses regex - or :
+                
+            });
             
-        });
-        
-        $app->get('/{id}/components',
-            function ($request, $response, $args) use ($app, $log) {
-            //returns a level or levels - uses regex - or :
+            $app->get('/{id}/radicals',
+                function ($request, $response, $args) use ($app, $log) {
+                //returns a level or levels - uses regex - or :
+                
+            });
             
-        });
-        
-        $app->get('/{id}/definition',
-            function ($request, $response, $args) use ($app, $log) {
-            //returns a level or levels - uses regex - or :
+            $app->get('/{id}/components',
+                function ($request, $response, $args) use ($app, $log) {
+                //returns a level or levels - uses regex - or :
+                
+            });
             
+            $app->get('/{id}/definition',
+                function ($request, $response, $args) use ($app, $log) {
+                //returns a level or levels - uses regex - or :
+                
+            });
+            
+            $app->get('/hsk',
+                function ($request, $response) use ($app, $log) {
+                //returns list of all HSK chars. in v1 equiv to #2
+            });
+            
+            $app->get('/hsk/{level}',
+                function ($request, $response, $args) use ($app, $log) {
+                //returns a level or levels - uses regex - or :
+            });
+            */
         });
-        
-        $app->get('/hsk',
-            function ($request, $response) use ($app, $log) {
-            //returns list of all HSK chars. in v1 equiv to #2
-        });
-        
-        $app->get('/hsk/{level}',
-            function ($request, $response, $args) use ($app, $log) {
-            //returns a level or levels - uses regex - or :
-        });
-        
     });
-
 });
-*/
+
 
 // Route for testing basic functionality
-$oApp->get("/", function(\Slim\Http\Request $req, \Slim\Http\Response $res) {
+$oApp->get("/", function(Request $req, Response $res) {
     $oDb = $this->db;
     $iCount = count($oDb->t_main);
     //echo "count: $iCount";

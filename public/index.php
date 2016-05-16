@@ -7,7 +7,7 @@ require_once __DIR__ . '/../src/bootstrap.php';
 require_once __DIR__ . '/../src/dependencies.php';
 
 // Register middleware
-//require_once __DIR__ . '/../src/middleware.php';
+require_once __DIR__ . '/../src/middleware.php';
 
 // Register routes
 require_once __DIR__ . '/../src/routes.php';

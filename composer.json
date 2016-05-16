@@ -12,15 +12,18 @@
     "require": {
         "slim/slim": "^3.0",
         "monolog/monolog": "^1.19",
-        "vrana/notorm": "dev-master",
         "slim/middleware": "^1.0",
         "flynsarmy/slim-monolog": "^1.0",
-        "slim/extras": "^2.0"
+        "slim/extras": "^2.0",
+        "j4mie/idiorm": "^1.5"
     },
     "archive": {
         "exclude": ["vendor", ".DS_Store", "*.log"]
     },
     "autoload": {
-        "psr-4": {"API\\": "src/api/"}
+        "psr-4": {
+            "API\\": "src/api/",
+            "API\\Middleware\\": "src/api/middleware"
+        }
     }
 }

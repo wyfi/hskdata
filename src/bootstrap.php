@@ -1,4 +1,6 @@
 <?php
+// set the default timezone
+date_default_timezone_set('UTC');
 
 // Provide autoloading for classes
 require_once __DIR__ . '/../vendor/autoload.php';
@@ -19,7 +21,7 @@ if (empty($_ENV['SLIM_MODE'])) {
 }
 
 // Init and load configuration. Find a config file specific to the mode; otherwise use default
-$avConfig = array();
+$avSettings = array();
 $sConfigFile = realpath(__DIR__ . '/../config') . '/' . $_ENV['SLIM_MODE'] . '.php';
 
 if (is_readable($sConfigFile)) {
@@ -29,7 +31,7 @@ if (is_readable($sConfigFile)) {
 }
 
 // Create Slim spplication
-$oApp = new App(['settings' => $avConfig]);
+$oApp = new App(['settings' => $avSettings]);
 
 // Get container and add logger 
 $oContainer = $oApp->getContainer();
